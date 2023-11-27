@@ -11,7 +11,7 @@ import {
 } from '../common/commonService';
 import db, { dbOptions } from '../database/mongo';
 import { Admin } from '../database/models/Admin';
-import { decryptText, encryptText } from '../common/cryptService';
+import { decryptText } from '../common/cryptService';
 import jwt from 'jsonwebtoken';
 import { ObjectId } from 'mongoose';
 

@@ -44,6 +44,7 @@ export function NotFound(name: string) {
 
 export const STATUS_CODE = {
   CONFLICT: 409,
+  ACCESS_DENIED: 401,
   NOT_FOUND: 404,
   INT_ERR: 500,
   BAD_REQ: 400,
