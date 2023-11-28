@@ -2,7 +2,6 @@ import { ObjectId, Schema, SchemaTypes, model } from 'mongoose';
 import { COMMON_STATUS, missingField } from '../../common/commonService';
 
 const { ACTIVE, DE_ACTIVE } = COMMON_STATUS;
-
 type ProductType = {
   _id?: ObjectId;
   productName: string;

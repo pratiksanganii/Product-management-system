@@ -2,9 +2,10 @@ require('dotenv').config({ path: '.env' });
 
 export function checkFilterParams(obj: any, include: string[]) {
   const temp: any = {};
+  const status = STATUS_CODE.BAD_REQ;
   for (let k of include) {
     if (obj[k] == undefined || obj[k] == null)
-      throw new Error(`${k} is required.`);
+      return { status, message: missingField(k) };
     temp[k] = obj[k];
   }
   return temp;
@@ -12,6 +13,10 @@ export function checkFilterParams(obj: any, include: string[]) {
 
 export function missingField(field: string) {
   return `${field} is required.`;
+}
+
+export function inValidField(field: string) {
+  return `Provide valid ${field}.`;
 }
 
 export const COMMON_STATUS = {

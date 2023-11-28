@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { connectDB } from './database/db';
 import productRouter from './routes/productRouter';
@@ -21,6 +21,9 @@ async function initialize() {
 
     // product router setup
     app.use('/product', productRouter);
+    app.use('*', (req: Request, res: Response) =>
+      res.status(404).json({ message: 'Not found.' })
+    );
     app.use(errorHandler);
     app.listen(PORT);
   } catch (e) {
