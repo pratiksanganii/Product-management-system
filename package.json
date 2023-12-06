@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "npx nodemon",
     "build": "npm install && npx tsc",
-    "start": "node build/index"
+    "start": "node build/index.js"
   },
   "author": "pratik sangani",
   "license": "ISC",

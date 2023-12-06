@@ -8,6 +8,7 @@ import spec from './spec';
 import { errorHandler } from './middleware/errorMiddleware';
 
 async function initialize() {
+  console.log('initialize');
   try {
     dotenv.config({ path: '.env' });
     const app = express();
