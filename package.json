@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "npx nodemon",
-    "start": "npx tsc && node build/index"
+    "build": "npx tsc",
+    "start": "node build/index"
   },
   "author": "pratik sangani",
   "license": "ISC",

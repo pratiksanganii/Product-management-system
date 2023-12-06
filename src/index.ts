@@ -25,6 +25,7 @@ async function initialize() {
       res.status(404).json({ message: 'Not found.' })
     );
     app.use(errorHandler);
+    console.log({ PORT });
     app.listen(PORT);
   } catch (e) {
     process.exit(1);
