@@ -29,6 +29,7 @@ async function initialize() {
     console.log({ PORT });
     app.listen(PORT);
   } catch (e) {
+    console.log({ e });
     process.exit(1);
   }
 }
