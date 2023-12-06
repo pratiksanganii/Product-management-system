@@ -9,11 +9,12 @@ import { errorHandler } from './middleware/errorMiddleware';
 
 async function initialize() {
   console.log('initialize');
+  dotenv.config({ path: '.env' });
+  const PORT = process.env.PORT;
   try {
-    dotenv.config({ path: '.env' });
     const app = express();
 
-    const PORT = process.env.PORT;
+    console.log({ PORT });
     await connectDB();
     app.use(express.json());
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(spec));
@@ -26,7 +27,6 @@ async function initialize() {
       res.status(404).json({ message: 'Not found.' })
     );
     app.use(errorHandler);
-    console.log({ PORT });
     app.listen(PORT);
   } catch (e) {
     console.log({ e });
