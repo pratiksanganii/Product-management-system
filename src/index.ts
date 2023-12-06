@@ -35,4 +35,7 @@ async function initialize() {
 }
 
 // start application
+let i = 0;
+console.log({ i });
+i++;
 initialize();
