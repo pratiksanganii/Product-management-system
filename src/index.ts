@@ -11,10 +11,10 @@ async function initialize() {
   console.log('initialize');
   dotenv.config({ path: '.env' });
   const PORT = process.env.PORT;
+  console.log({ PORT });
   try {
     const app = express();
 
-    console.log({ PORT });
     await connectDB();
     app.use(express.json());
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(spec));
